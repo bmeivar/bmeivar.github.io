@@ -147,6 +147,11 @@ pre.bib {
 }
 .group-label { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 8px 0 -8px; }
 
+/* teaser figure */
+.teaser { margin: 10px 0 4px; display: grid; gap: 6px; }
+.teaser img { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+.teaser figcaption { font-size: 13px; color: var(--ink-3); }
+
 /* skills */
 .skills { margin: 0; display: grid; gap: 12px; }
 .skills div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; }
@@ -182,9 +187,9 @@ footer { font-size: 13px; color: var(--ink-3); }
     <div class="monogram" aria-hidden="true">BM</div>
     <div>
       <h1>Boaz Meivar</h1>
-      <p class="role">PhD student in computer vision<br>Tel Aviv University · advised by Prof. Shai Avidan</p>
+      <p class="role">PhD student in computer vision<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span></p>
     </div>
-    <span class="status">Seeking research and applied scientist internships · computer vision, multimodal, retrieval</span>
+    <span class="status">Seeking research and applied scientist internships</span>
     <ul class="links">
       <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
       <li><span class="k">GitHub</span><a class="v" href="https://github.com/bmeivar">github.com/bmeivar</a></li>
@@ -197,12 +202,12 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
       <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models actually use the evidence in front of them.</p>
-      <p class="prose">In practice this is the gap between a user's photo and a catalog image of the same product, which rarely frame the object the same way, and the cost of measuring a retrieval model on a 100M-image index before it ships.</p>
-      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as query-side scale augmentation with an OWLv2 crop reranker, which reaches state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a flutter early-warning system end to end, from raw sensor signals to warning thresholds; thresholds set in the wind tunnel transferred unchanged to flight tests of a different aircraft.</p>
+      <p class="prose">In practice this is the gap between how a user frames an object in a photo and how it appears in an indexed image, the core of visual search and lookup, and the cost of measuring a retrieval model on a 100M-image index before it ships.</p>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to new methods and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, building a flutter early-warning system whose thresholds transferred unchanged from the wind tunnel to flight tests.</p>
       <div class="themes">
         <div class="theme">
           <h3>Scale and context in retrieval</h3>
-          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Query-side scale augmentation plus an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000) with no change to the gallery index.</p>
+          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Correcting it reaches state of the art on ILIAS-100M without re-indexing the gallery.</p>
         </div>
         <div class="theme">
           <h3>Retrieval evaluation at scale</h3>
@@ -210,7 +215,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </div>
         <div class="theme">
           <h3>Evidence use in VLMs</h3>
-          <p>Ill-posed tasks such as metric size estimation expose which visual cues a model relies on, where well-posed tasks hide it.</p>
+          <p>On metric object-size estimation, even 235B&ndash;397B VLMs trail a text-only LLM on real scenes, and scene geometry goes largely unused.</p>
         </div>
       </div>
     </section>
@@ -234,7 +239,11 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Beyond Resolution: <span class="nw">Object-to-Image</span> Ratio Mismatch in Instance Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Ofir Kedem, Amit Edenzon, Gal Chechik, Shai Avidan</p>
-            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Query-side scale augmentation plus an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000) without retraining or modifying the gallery index, and a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
+            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. A LoRA fine-tune recovers the query-side gains in a single forward pass; adding an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000) without retraining or modifying the gallery index.</p>
+            <figure class="teaser">
+              <img src="assets/o2i_teaser.webp" width="1400" height="767" loading="lazy" alt="Three panels. A: a tight query photo of a red backpack and a wide street scene containing the same backpack produce dissimilar features. B: averaging query features over several scales matches the wide gallery image. C: object-centric crops of gallery images improve reranking.">
+              <figcaption>The same object at different object-to-image ratios gives dissimilar features (A). Query-side (B) and gallery-side (C) fixes reduce the mismatch.</figcaption>
+            </figure>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.11489">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026beyond,
@@ -272,7 +281,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Ill-Posed</span> by Design: Probing Evidence Use in VLMs</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shaked Perek, Shani Shvartzman, Eli Schwartz, Shai Avidan</p>
-            <p class="finding">Metric VQA: 10,813 object-size queries from Objectron and 331 tape-measured real scenes. Twelve open VLMs (3B to 397B) are probed with counterfactuals that remove one cue at a time, revealing which cues each model uses for size.</p>
+            <p class="finding">Metric VQA: 10,813 object-size queries from Objectron and 331 tape-measured real scenes. Across 12 open VLMs (3B to 397B), counterfactuals that remove one cue at a time show that object identity carries most of the answer and global scene geometry is largely unused; even the largest models trail a text-only frontier LLM on real scenes. LoRA fine-tuning makes the task learnable but does not teach models to use geometry.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2606.24335">arXiv</a>
               <a href="https://github.com/bmeivar/MetricVQA">Code</a>
@@ -392,7 +401,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="skills">
       <h2 class="eyebrow" id="skills">Skills</h2>
       <dl class="skills">
-        <div><dt>Research areas</dt><dd>Computer vision, multimodal and vision-language models, representation learning, image and instance retrieval, segmentation, robustness, benchmark design, large-scale evaluation</dd></div>
+        <div><dt>Research areas</dt><dd>Computer vision, multimodal and vision-language models, representation learning, image and instance retrieval, visual search, 3D and spatial understanding (metric object size, camera distance), segmentation, robustness, benchmark design, efficient large-scale evaluation</dd></div>
         <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open VLMs from 3B to 397B parameters</dd></div>
         <div><dt>Engineering</dt><dd>Python, PyTorch, multi-GPU feature extraction and 100M-image indexing, fine-tuning (LoRA), open-source research code</dd></div>
       </dl>
