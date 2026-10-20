@@ -197,11 +197,11 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
       <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models actually use the evidence in front of them.</p>
-      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as scale-robust retrieval that sets the state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a data-driven flutter warning system that was validated in flight tests.</p>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as scale-robust retrieval that reaches state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a data-driven flutter warning system that was validated in flight tests.</p>
       <div class="themes">
         <div class="theme">
           <h3>Scale and context in retrieval</h3>
-          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Fixing it on the query side reaches 42.0 mAP@1000 on ILIAS-100M without re-indexing the gallery.</p>
+          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Query-side scale augmentation plus an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000) with no change to the gallery index.</p>
         </div>
         <div class="theme">
           <h3>Retrieval evaluation at scale</h3>
