@@ -14,7 +14,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Boaz Meivar: algorithms researcher and PhD student in AI (computer vision) at Tel Aviv University. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
+<meta name="description" content="Boaz Meivar: PhD student in AI (computer vision) at Tel Aviv University and Principal Engineer at a computer vision startup. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -146,7 +146,7 @@ pre.bib {
 .teaser img { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
 .teaser figcaption { font-size: 13px; color: var(--ink-3); }
 
-.with-media { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 20px; align-items: start; }
+.with-media { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 20px; align-items: start; }
 .media { margin: 2px 0 0; display: grid; gap: 4px; }
 .media img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
 .media figcaption { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
@@ -186,7 +186,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <img class="headshot" src="assets/headshot.webp" width="120" height="120" alt="Boaz Meivar">
     <div>
       <h1>Boaz Meivar</h1>
-      <p class="role">PhD student in AI (computer vision)<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
+      <p class="role">PhD student in AI (computer vision)<br>Principal Engineer, computer vision startup<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
     </div>
     <ul class="links">
       <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
@@ -226,7 +226,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Beyond Resolution: <span class="nw">Object-to-Image</span> Ratio Mismatch in Instance Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Ofir Kedem, Amit Edenzon, Gal Chechik, Shai Avidan</p>
-            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Query-side scale augmentation reaches 29.2 mAP@1000 on ILIAS-100M and an OWLv2 crop reranker 42.0, both training-free; a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
+            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Query-side scale augmentation reaches 29.2 mAP@1000 on ILIAS-100M, and adding an OWLv2 crop reranker gives a state-of-the-art 42.0, all training-free and without re-indexing the gallery; a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.11489">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026beyond,
@@ -250,7 +250,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. The number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample yields the metric at any scale. From a 5% sample, the tail-aware (EVT) estimate lands within about 0.01 of full-scale mAP (mean absolute error 0.005) across five backbones. It is validated at 100M images on ILIAS and INSTRE and on the full 759k-distractor GLDv2 pool, and is an order of magnitude closer than scoring the subset directly.</p>
+            <p class="finding">Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model; because the number of distractors that outrank a positive is binomial in gallery size, a per-query hardness estimated on a small sample yields the metric at any scale. From a 5% sample, the tail-aware (EVT) estimate lands within about 0.01 of full-scale mAP (mean absolute error 0.005) across five backbones. It is validated at 100M images on ILIAS and INSTRE and on the full 759k-distractor GLDv2 pool, and is an order of magnitude closer than scoring the subset directly.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -317,7 +317,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Measurement-aware</span> learning for reliable <span class="nw">grain-boundary</span> analysis in quantitative metallography</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren</p>
-            <p class="finding">A context-ablation study shows that weak grain boundaries cannot be reliably detected without global context. The proposed model, MLOGRAPHY++, is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
+            <p class="finding">A context-ablation study shows that removing global context sharply degrades detection of weak grain boundaries. The proposed model, MLOGRAPHY++, is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
             <div class="actions">
               <a href="https://doi.org/10.1038/s41598-026-58714-5">Paper</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026metallography,
@@ -401,8 +401,9 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="skills">
       <h2 class="eyebrow" id="skills">Skills</h2>
       <dl class="skills">
-        <div><dt>Models</dt><dd>Self-supervised learning; foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
-        <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS, gradient-boosted trees, active learning; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
+        <div><dt>Methods</dt><dd>Self-supervised learning, few-shot retrieval, active learning, gradient-boosted trees, LoRA fine-tuning</dd></div>
+        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
+        <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
         <div><dt>Also</dt><dd>Time-series analysis and anomaly detection, physics simulation and optimization; MATLAB, TensorFlow</dd></div>
         <div><dt>Languages</dt><dd>Hebrew, English, French</dd></div>
       </dl>
