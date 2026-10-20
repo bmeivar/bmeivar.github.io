@@ -203,7 +203,7 @@ footer { font-size: 13px; color: var(--ink-3); }
       <ul class="highlights">
         <li><a href="#p-o2i"><b>State of the art on ILIAS-100M</b></a> instance retrieval (42.0 mAP@1000), training-free and without re-indexing the gallery.</li>
         <li><a href="#p-webscale"><b>Web-scale retrieval evaluation with 20&times; less indexing</b></a>, accurate to about 0.01 mAP.</li>
-        <li><a href="#p-metricvqa"><b>Metric object size from a single image:</b></a> vision-language models lean on what the object is and largely ignore scene geometry.</li>
+        <li><a href="#p-metricvqa"><b>Ill-posed tasks as a new lens on vision-language models:</b></a> when no single cue determines the answer, counterfactuals reveal which evidence a model actually uses.</li>
       </ul>
     </section>
 
@@ -268,7 +268,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Ill-Posed</span> by Design: Probing Evidence Use in VLMs</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shaked Perek, Shani Shvartzman, Eli Schwartz, Shai Avidan</p>
-            <p class="finding">Metric VQA: 10,813 monocular metric-size queries from Objectron and 331 tape-measured real scenes. Across 12 open VLMs (3B to 397B), counterfactuals over six visual and language evidence channels show that object identity is the strongest cue and global scene geometry is largely unused; even the largest models trail a text-only frontier LLM on real scenes. LoRA fine-tuning makes the task learnable but does not teach models to use geometry.</p>
+            <p class="finding">On well-posed tasks, removing a cue often leaves the answer unchanged because other cues still support it, so ablations cannot separate unused evidence from redundant evidence. Monocular metric object size is ill-posed, which makes them informative. Metric VQA: 10,813 queries from Objectron and 331 tape-measured real scenes. Across 12 open VLMs (3B to 397B), counterfactuals over six visual and language evidence channels show that object identity is the strongest cue and global scene geometry is largely unused; even the largest models trail a text-only frontier LLM on real scenes. LoRA fine-tuning makes the task learnable but does not teach models to use geometry.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2606.24335">arXiv</a>
               <a href="https://github.com/bmeivar/MetricVQA">Code</a>
