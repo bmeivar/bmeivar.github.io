@@ -7,12 +7,12 @@
 <link rel="canonical" href="https://bmeivar.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Boaz Meivar · Computer Vision PhD, Tel Aviv University">
-<meta property="og:description" content="Robustness of visual representations to scale, viewpoint and context; retrieval evaluation at 100M scale; evidence use in vision-language models.">
+<meta property="og:description" content="Robustness of visual representations to object scale and context; retrieval evaluation at 100M scale; evidence use in vision-language models.">
 <meta property="og:url" content="https://bmeivar.github.io/">
 <meta property="og:image" content="https://bmeivar.github.io/assets/o2i_teaser.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Boaz Meivar: PhD student in computer vision at Tel Aviv University. Robustness of visual representations to scale, viewpoint and context; retrieval evaluation; evidence use in vision-language models.">
+<meta name="description" content="Boaz Meivar: PhD student in computer vision at Tel Aviv University. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -118,6 +118,11 @@ section { display: grid; gap: 20px; min-width: 0; }
 .pub { scroll-margin-top: 24px; }
 .theme p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
 
+.highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 44em; }
+.highlights li { position: relative; padding-left: 18px; font-size: 15.5px; color: var(--ink-2); }
+.highlights li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.highlights b { color: var(--ink); font-weight: 600; }
+
 /* publications */
 .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .pub {
@@ -204,23 +209,13 @@ footer { font-size: 13px; color: var(--ink-3); }
   <main>
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
-      <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models actually use the evidence in front of them.</p>
-      <p class="prose">In product terms: matching how a user frames an object to how it appears in an indexed photo is the core of visual search, and measuring a retriever on a 100M-image index is expensive before it ships.</p>
-      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. Before computer vision I worked in aeroelasticity, on data-driven flutter warning from flight sensor data.</p>
-      <div class="themes">
-        <div class="theme">
-          <h3><a href="#p-o2i">Scale and context in retrieval</a></h3>
-          <p>Why the same object retrieves poorly when it fills a different fraction of the frame, and how much surrounding context a descriptor really uses.</p>
-        </div>
-        <div class="theme">
-          <h3><a href="#p-webscale">Retrieval evaluation at scale</a></h3>
-          <p>Estimating web-scale retrieval scores from a small sample of the gallery instead of indexing all of it.</p>
-        </div>
-        <div class="theme">
-          <h3><a href="#p-metricvqa">Evidence use in VLMs</a></h3>
-          <p>Which visual cues vision-language models actually rely on when a question cannot be answered from the image alone.</p>
-        </div>
-      </div>
+      <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.</p>
+      <ul class="highlights">
+        <li><b>State of the art on ILIAS-100M</b> instance retrieval (42.0 mAP@1000) with no training and no re-indexing of the gallery.</li>
+        <li><b>Web-scale retrieval evaluation, 20&times; cheaper:</b> 100M-image mAP estimated from a 5% sample to within about 0.01.</li>
+        <li><b>Metric VQA:</b> a benchmark showing which visual cues VLMs from 3B to 397B parameters use to judge object size.</li>
+      </ul>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained vision backbones and open vision-language models. Before computer vision I worked in aeroelasticity, on data-driven flutter warning from flight sensor data.</p>
     </section>
 
     <section aria-labelledby="papers">
@@ -233,7 +228,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Object-Only</span> Is Not <span class="nw">Context-Free</span>: A Counterfactual Diagnostic for Context Removal in Object Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">KAP, the Keyhole Aperture Probe, measures how much a mask-pooled object descriptor depends on the scene around the object by growing a visible aperture around the mask while pooling stays fixed.</p>
+            <p class="finding">KAP, the Keyhole Aperture Probe, measures how much an object's embedding depends on its surroundings, by revealing more of the scene around the object while the object region used for pooling stays fixed.</p>
           </div>
         </li>
 
@@ -266,7 +261,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Retrieval evaluation obeys a scaling law: the number of distractors that outrank a positive is binomial in gallery size. Indexing 100M images costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. From a 5% sample (20&times; less indexing), the tail-aware estimate matches full-scale mAP to within about 0.01 (mean absolute error 0.005) across five backbones, on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude better than scoring the subset directly.</p>
+            <p class="finding">Estimates full-scale retrieval mAP from a 5% sample of the gallery (20&times; less indexing) to within about 0.01 (mean absolute error 0.005), across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude better than scoring the subset directly. Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. Key idea: the number of distractors that outrank a positive is binomial in gallery size.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -284,7 +279,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Ill-Posed</span> by Design: Probing Evidence Use in VLMs</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shaked Perek, Shani Shvartzman, Eli Schwartz, Shai Avidan</p>
-            <p class="finding">Metric VQA: 10,813 object-size queries from Objectron and 331 tape-measured real scenes. Across 12 open VLMs (3B to 397B), counterfactuals that remove one cue at a time show that target identity is the most load-bearing cue and global scene geometry is largely unused; even the largest models trail a text-only frontier LLM on real scenes. LoRA fine-tuning makes the task learnable but does not teach models to use geometry.</p>
+            <p class="finding">Metric VQA: 10,813 object-size queries from Objectron and 331 tape-measured real scenes. Across 12 open VLMs (3B to 397B), counterfactuals over six visual and language evidence channels show that target identity is the most load-bearing cue and global scene geometry is largely unused; even the largest models trail a text-only frontier LLM on real scenes. LoRA fine-tuning makes the task learnable but does not teach models to use geometry.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2606.24335">arXiv</a>
               <a href="https://github.com/bmeivar/MetricVQA">Code</a>
@@ -300,7 +295,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">WACV 2026</b><span>published</span></div>
+          <div class="venue"><b class="accepted">WACV 2026</b><span>conference</span></div>
           <div class="pub-body">
             <h4>Decoupling Shape and Texture in <span class="nw">SAM-2</span> via Controlled Texture Replacement</h4>
             <p class="authors">Inbal Cohen*, <strong>Boaz Meivar</strong>*, Peihan Tu, Shai Avidan, Gal Oren <span class="note">· *equal contribution</span></p>
@@ -329,11 +324,11 @@ footer { font-size: 13px; color: var(--ink-3); }
       <ol class="pubs">
 
         <li class="pub">
-          <div class="venue"><b class="accepted">Sci. Rep. 2026</b><span>published</span></div>
+          <div class="venue"><b class="accepted">Sci. Reports</b><span>2026 · journal</span></div>
           <div class="pub-body">
             <h4><span class="nw">Measurement-aware</span> learning for reliable <span class="nw">grain-boundary</span> analysis in quantitative metallography</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren</p>
-            <p class="finding">A context-ablation study shows that global context is a first-order condition for detecting weak grain boundaries. MLOGRAPHY++ is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
+            <p class="finding">A context-ablation study shows that global context is a first-order condition for detecting weak grain boundaries. Our method, MLOGRAPHY++, is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
             <div class="actions">
               <a href="https://doi.org/10.1038/s41598-026-58714-5">Paper</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026metallography,
@@ -353,7 +348,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">Ann. BME 2026</b><span>published</span></div>
+          <div class="venue"><b class="accepted">Annals BME</b><span>2026 · journal</span></div>
           <div class="pub-body">
             <h4>Simultaneous 3D Quantification of Fluid&ndash;Structure Interaction in a <span class="nw">Patient-Averaged</span> Left Ventricle: A Lagrangian Experimental Framework</h4>
             <p class="authors">Omer Hadar, <strong>Boaz Meivar</strong>, Shai Avidan, Alex Liberzon</p>
@@ -375,7 +370,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">AIAA J. 2025</b><span>published</span></div>
+          <div class="venue"><b class="accepted">AIAA Journal</b><span>2025 · journal</span></div>
           <div class="pub-body">
             <h4><span class="nw">Data-Driven</span> Approach to the Development of an Aeroelastic Flutter Precursor</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Moti Karpel</p>
@@ -404,7 +399,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="skills">
       <h2 class="eyebrow" id="skills">Skills</h2>
       <dl class="skills">
-        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open VLMs from 3B to 397B parameters</dd></div>
+        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
         <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
       </dl>
     </section>
