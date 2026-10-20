@@ -184,7 +184,7 @@ footer { font-size: 13px; color: var(--ink-3); }
       <h1>Boaz Meivar</h1>
       <p class="role">PhD student in computer vision<br>Tel Aviv University · advised by Prof. Shai Avidan</p>
     </div>
-    <span class="status">Open to research internships and research scientist roles</span>
+    <span class="status">Seeking research and applied scientist internships · computer vision, multimodal, retrieval</span>
     <ul class="links">
       <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
       <li><span class="k">GitHub</span><a class="v" href="https://github.com/bmeivar">github.com/bmeivar</a></li>
@@ -197,7 +197,8 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
       <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models actually use the evidence in front of them.</p>
-      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as scale-robust retrieval that reaches state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a data-driven flutter warning system that was validated in flight tests.</p>
+      <p class="prose">In practice this is the gap between a user's photo and a catalog image of the same product, which rarely frame the object the same way, and the cost of measuring a retrieval model on a 100M-image index before it ships.</p>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as scale-robust retrieval that reaches state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a flutter early-warning system end to end, from raw sensor signals to warning thresholds; thresholds set in the wind tunnel transferred unchanged to flight tests of a different aircraft.</p>
       <div class="themes">
         <div class="theme">
           <h3>Scale and context in retrieval</h3>
@@ -253,7 +254,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Retrieval evaluation obeys a scaling law: the number of distractors that outrank a positive is binomial in gallery size. From a 5% sample (20&times; less indexing), the tail-aware estimate matches full 100M-scale mAP to within about 0.01 across five backbones and three benchmarks (ILIAS, INSTRE, GLDv2), an order of magnitude better than scoring the subset directly.</p>
+            <p class="finding">Retrieval evaluation obeys a scaling law: the number of distractors that outrank a positive is binomial in gallery size. Indexing 100M images costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. From a 5% sample (20&times; less indexing), the tail-aware estimate matches full 100M-scale mAP to within about 0.01 across five backbones and three benchmarks (ILIAS, INSTRE, GLDv2), an order of magnitude better than scoring the subset directly.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -366,7 +367,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4><span class="nw">Data-Driven</span> Approach to the Development of an Aeroelastic Flutter Precursor</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Moti Karpel</p>
-            <p class="finding">Model-free flutter early warning from raw sensor signals. Thresholds set on wind-tunnel data transfer unchanged to flight tests of a different aircraft, warning up to 6&nbsp;s before flutter onset.</p>
+            <p class="finding">A flutter early-warning system built end to end, from raw sensor signals to warning thresholds, with no aircraft model. Thresholds set on wind-tunnel data transfer unchanged to flight tests of a different aircraft, warning up to 6&nbsp;s before flutter onset.</p>
             <div class="actions">
               <a href="https://doi.org/10.2514/1.J064327">Paper</a>
               <a href="https://doi.org/10.2514/6.2022-0522">SciTech 2022 version</a>
