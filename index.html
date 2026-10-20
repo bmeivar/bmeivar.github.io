@@ -3,8 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Boaz Meivar</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<title>Boaz Meivar · Computer Vision PhD, Tel Aviv University</title>
+<link rel="canonical" href="https://bmeivar.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Boaz Meivar · Computer Vision PhD, Tel Aviv University">
+<meta property="og:description" content="Robustness of visual representations to scale, viewpoint and context; retrieval evaluation at 100M scale; evidence use in vision-language models.">
+<meta property="og:url" content="https://bmeivar.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Boaz Meivar: PhD student in computer vision at Tel Aviv University. Robustness of visual representations to scale, viewpoint and context; retrieval evaluation; evidence use in vision-language models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +23,7 @@
   --surface: #ffffff;
   --ink: #15191d;
   --ink-2: #4a525a;
-  --ink-3: #7a838c;
+  --ink-3: #646c74;
   --rule: #e3e6e8;
   --accent: #0f6a73;
   --accent-soft: #e3f1f2;
@@ -50,6 +56,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration: none; }
+.nw { white-space: nowrap; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 a:focus-visible, summary:focus-visible, button:focus-visible {
   outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px;
@@ -88,7 +95,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 .links li { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
 .links .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex: none; }
 .links .v { min-width: 0; overflow-wrap: anywhere; }
-.email { font-family: var(--font-mono); font-size: 13.5px; color: var(--ink); user-select: all; }
+.email { font-family: var(--font-mono); font-size: 13.5px; }
 
 /* main column */
 main { display: grid; gap: 56px; min-width: 0; }
@@ -123,7 +130,7 @@ section { display: grid; gap: 20px; min-width: 0; }
 .venue b.accepted { background: var(--accent-soft); color: var(--accent); }
 .venue span { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .pub-body { display: grid; gap: 6px; min-width: 0; }
-.pub h3 { font-size: 17.5px; font-weight: 600; line-height: 1.35; }
+.pub h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; font-size: 17.5px; font-weight: 600; line-height: 1.35; }
 .authors { margin: 0; font-size: 14.5px; color: var(--ink-2); }
 .authors strong { color: var(--ink); font-weight: 600; }
 .finding { margin: 2px 0 0; font-size: 15px; color: var(--ink); max-width: 44em; }
@@ -138,7 +145,13 @@ pre.bib {
   font-family: var(--font-mono); font-size: 12px; line-height: 1.55; color: var(--ink-2);
   overflow-x: auto; white-space: pre;
 }
-.group-label { font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 8px 0 -8px; }
+.group-label { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 8px 0 -8px; }
+
+/* skills */
+.skills { margin: 0; display: grid; gap: 12px; }
+.skills div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 20px; }
+.skills dt { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-3); padding-top: 2px; }
+.skills dd { margin: 0; font-size: 15px; color: var(--ink-2); }
 
 /* background */
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -155,7 +168,7 @@ footer { font-size: 13px; color: var(--ink-3); }
   .themes { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 520px) {
-  .pub, .timeline li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pub, .timeline li, .skills div { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .venue { grid-auto-flow: column; justify-content: start; align-items: center; gap: 10px; }
   .lede { font-size: 19px; }
 }
@@ -173,7 +186,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     </div>
     <span class="status">Open to research internships and research scientist roles</span>
     <ul class="links">
-      <li><span class="k">Email</span><span class="v email">bmeivar@gmail.com</span></li>
+      <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
       <li><span class="k">GitHub</span><a class="v" href="https://github.com/bmeivar">github.com/bmeivar</a></li>
       <li><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/boaz-meivar">in/boaz-meivar</a></li>
       <li><span class="k">Papers</span><a class="v" href="https://www.semanticscholar.org/author/2148726410">Semantic Scholar</a></li>
@@ -183,16 +196,16 @@ footer { font-size: 13px; color: var(--ink-3); }
   <main>
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
-      <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale without paying for it, and whether vision-language models actually use the evidence in front of them.</p>
-      <p class="prose">My work is diagnostic. I build controlled benchmarks and counterfactual probes that isolate one factor at a time, measure it across many pretrained backbones and open VLMs from 3B to 397B parameters, and turn what breaks into a fix or a cheaper protocol. Before computer vision I worked in aeroelasticity, where I built a data-driven flutter warning system that was validated in real flight tests.</p>
+      <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with scale, viewpoint and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models actually use the evidence in front of them.</p>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained backbones and open VLMs from 3B to 397B parameters. The results lead to methods, such as scale-robust retrieval that sets the state of the art on ILIAS-100M, and to cheaper evaluation protocols. Before computer vision I worked in aeroelasticity, where I built a data-driven flutter warning system that was validated in flight tests.</p>
       <div class="themes">
         <div class="theme">
           <h3>Scale and context in retrieval</h3>
-          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Removing background often hurts more than it helps.</p>
+          <p>Object-to-image ratio mismatch, not resolution, drives most cross-scale failures. Fixing it on the query side reaches 42.0 mAP@1000 on ILIAS-100M without re-indexing the gallery.</p>
         </div>
         <div class="theme">
           <h3>Retrieval evaluation at scale</h3>
-          <p>A scaling law for distractors lets 100M-image benchmarks be estimated from a small gallery, saving hundreds of GPU-hours per model.</p>
+          <p>A per-query scaling law recovers 100M-image mAP to within about 0.01 from a 5% sample, with 20&times; less indexing.</p>
         </div>
         <div class="theme">
           <h3>Evidence use in VLMs</h3>
@@ -203,13 +216,13 @@ footer { font-size: 13px; color: var(--ink-3); }
 
     <section aria-labelledby="papers">
       <h2 class="eyebrow" id="papers">Publications</h2>
-      <p class="group-label">Computer vision and machine learning</p>
+      <h3 class="group-label">Computer vision and machine learning</h3>
       <ol class="pubs">
 
         <li class="pub">
           <div class="venue"><b class="accepted">WACV 2027</b><span>accepted</span></div>
           <div class="pub-body">
-            <h3>Object-Only Is Not Context-Free: A Counterfactual Diagnostic for Context Removal in Object Retrieval</h3>
+            <h4><span class="nw">Object-Only</span> Is Not <span class="nw">Context-Free</span>: A Counterfactual Diagnostic for Context Removal in Object Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
             <p class="finding">KAP, the Keyhole Aperture Probe, measures how much a mask-pooled object descriptor depends on the scene around the object by growing a visible aperture around the mask while pooling stays fixed.</p>
           </div>
@@ -218,9 +231,9 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b>arXiv</b><span>Oct 2026</span></div>
           <div class="pub-body">
-            <h3>Beyond Resolution: Object-to-Image Ratio Mismatch in Instance Retrieval</h3>
+            <h4>Beyond Resolution: <span class="nw">Object-to-Image</span> Ratio Mismatch in Instance Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Ofir Kedem, Amit Edenzon, Gal Chechik, Shai Avidan</p>
-            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones.</p>
+            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Query-side scale augmentation plus an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000) without retraining or modifying the gallery index, and a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.11489">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026beyond,
@@ -238,9 +251,9 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b>arXiv</b><span>Oct 2026</span></div>
           <div class="pub-body">
-            <h3>Web Scale on a Budget: Tail-Aware Retrieval Evaluation</h3>
+            <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Retrieval evaluation obeys a scaling law: the number of distractors that outrank a positive is binomial in gallery size. Web-scale scores such as ILIAS-100M can be estimated without indexing 100M images, which normally costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model.</p>
+            <p class="finding">Retrieval evaluation obeys a scaling law: the number of distractors that outrank a positive is binomial in gallery size. From a 5% sample (20&times; less indexing), the tail-aware estimate matches full 100M-scale mAP to within about 0.01 across five backbones and three benchmarks (ILIAS, INSTRE, GLDv2), an order of magnitude better than scoring the subset directly.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -256,7 +269,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b>arXiv</b><span>Jun 2026</span></div>
           <div class="pub-body">
-            <h3>Ill-Posed by Design: Probing Evidence Use in VLMs</h3>
+            <h4><span class="nw">Ill-Posed</span> by Design: Probing Evidence Use in VLMs</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shaked Perek, Shani Shvartzman, Eli Schwartz, Shai Avidan</p>
             <p class="finding">Metric VQA: 10,813 object-size queries from Objectron and 331 tape-measured real scenes. Twelve open VLMs (3B to 397B) are probed with counterfactuals that remove one cue at a time, revealing which cues each model uses for size.</p>
             <div class="actions">
@@ -276,7 +289,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b class="accepted">WACV 2026</b><span>published</span></div>
           <div class="pub-body">
-            <h3>Decoupling Shape and Texture in SAM-2 via Controlled Texture Replacement</h3>
+            <h4>Decoupling Shape and Texture in <span class="nw">SAM-2</span> via Controlled Texture Replacement</h4>
             <p class="authors">Inbal Cohen*, <strong>Boaz Meivar</strong>*, Peihan Tu, Shai Avidan, Gal Oren <span class="note">· *equal contribution</span></p>
             <p class="finding">Segment Anything models are biased toward object shape over texture. Fine-tuning with incrementally stronger texture replacement gives TextureSAM, which segments better where texture defines the boundary.</p>
             <div class="actions">
@@ -299,13 +312,13 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
       </ol>
 
-      <p class="group-label">Machine learning for science and engineering</p>
+      <h3 class="group-label">Machine learning for science and engineering</h3>
       <ol class="pubs">
 
         <li class="pub">
           <div class="venue"><b class="accepted">Sci. Reports</b><span>2026</span></div>
           <div class="pub-body">
-            <h3>Measurement-aware learning for reliable grain-boundary analysis in quantitative metallography</h3>
+            <h4><span class="nw">Measurement-aware</span> learning for reliable <span class="nw">grain-boundary</span> analysis in quantitative metallography</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren</p>
             <p class="finding">A context-ablation study shows that global context is a first-order condition for detecting weak grain boundaries. MLOGRAPHY++ is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
             <div class="actions">
@@ -329,7 +342,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b class="accepted">Ann. BME</b><span>2026</span></div>
           <div class="pub-body">
-            <h3>Simultaneous 3D Quantification of Fluid&ndash;Structure Interaction in a Patient-Averaged Left Ventricle: A Lagrangian Experimental Framework</h3>
+            <h4>Simultaneous 3D Quantification of Fluid&ndash;Structure Interaction in a <span class="nw">Patient-Averaged</span> Left Ventricle: A Lagrangian Experimental Framework</h4>
             <p class="authors">Omer Hadar, <strong>Boaz Meivar</strong>, Shai Avidan, Alex Liberzon</p>
             <p class="finding">SAM2 segmentation combined with 3D particle tracking and multi-media ray tracing gives co-registered, time-resolved 3D wall motion and intraventricular flow in a compliant heart model.</p>
             <div class="actions">
@@ -351,7 +364,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li class="pub">
           <div class="venue"><b class="accepted">AIAA J.</b><span>2025</span></div>
           <div class="pub-body">
-            <h3>Data-Driven Approach to the Development of an Aeroelastic Flutter Precursor</h3>
+            <h4><span class="nw">Data-Driven</span> Approach to the Development of an Aeroelastic Flutter Precursor</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Moti Karpel</p>
             <p class="finding">Model-free flutter early warning from raw sensor signals. Thresholds set on wind-tunnel data transfer unchanged to flight tests of a different aircraft, warning up to 6&nbsp;s before flutter onset.</p>
             <div class="actions">
@@ -375,11 +388,20 @@ footer { font-size: 13px; color: var(--ink-3); }
       </ol>
     </section>
 
+    <section aria-labelledby="skills">
+      <h2 class="eyebrow" id="skills">Skills</h2>
+      <dl class="skills">
+        <div><dt>Research areas</dt><dd>Computer vision, multimodal and vision-language models, representation learning, image and instance retrieval, segmentation, robustness, benchmark design, large-scale evaluation</dd></div>
+        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open VLMs from 3B to 397B parameters</dd></div>
+        <div><dt>Engineering</dt><dd>Python, PyTorch, multi-GPU feature extraction and 100M-image indexing, fine-tuning (LoRA), open-source research code</dd></div>
+      </dl>
+    </section>
+
     <section aria-labelledby="education">
       <h2 class="eyebrow" id="education">Education</h2>
       <ol class="timeline">
-        <li><span class="when">Ongoing</span><span class="what"><b>Ph.D., Computer Vision</b><span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
-        <li><span class="when">M.Sc.</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
+        <li><span class="when">Current</span><span class="what"><b>Ph.D., Computer Vision</b><span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
+        <li><span class="when">Completed</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
       </ol>
     </section>
 
