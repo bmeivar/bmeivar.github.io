@@ -77,12 +77,7 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 
 /* profile rail */
 .rail { position: sticky; top: calc(32px + env(safe-area-inset-top, 0px)); align-self: start; display: grid; gap: 20px; }
-.monogram {
-  width: 88px; height: 88px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: var(--accent-soft); color: var(--accent);
-  font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: 0.02em;
-}
+.headshot { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--rule); background: var(--surface); }
 .rail h1 { font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
 .role { color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 6px 0 0; }
 .status {
@@ -199,7 +194,7 @@ footer { font-size: 13px; color: var(--ink-3); }
 <div class="page">
 
   <aside class="rail" aria-label="Profile">
-    <div class="monogram" aria-hidden="true">BM</div>
+    <img class="headshot" src="assets/headshot.webp" width="120" height="120" alt="Boaz Meivar">
     <div>
       <h1>Boaz Meivar</h1>
       <p class="role">Algorithms researcher · PhD student in AI<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
