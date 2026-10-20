@@ -147,7 +147,7 @@ pre.bib {
 
 /* teaser figure */
 .teaser { grid-column: 1 / -1; margin: 4px 0 0; display: grid; gap: 6px; }
-.teaser img { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+.teaser img, .teaser video { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
 .teaser figcaption { font-size: 13px; color: var(--ink-3); }
 
 .with-media { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 20px; align-items: start; }
@@ -389,6 +389,10 @@ footer { font-size: 13px; color: var(--ink-3); }
 }</pre></details>
             </div>
           </div>
+          <figure class="teaser">
+            <video src="assets/arcod_demo.mp4" poster="assets/arcod_poster.webp" width="960" height="560" autoplay muted loop playsinline preload="metadata" aria-label="Animation: a wing-tip sensor signal streams in while the arCod metric rises and crosses its alarm threshold before flutter onset, as modal damping decreases toward zero."></video>
+            <figcaption>The arCod metric on a streamed synthetic signal: the alarm fires before flutter onset as modal damping drops toward zero.</figcaption>
+          </figure>
         </li>
       </ol>
     </section>
