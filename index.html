@@ -102,8 +102,8 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 main { display: grid; gap: 56px; min-width: 0; }
 section { display: grid; gap: 20px; min-width: 0; }
 .eyebrow {
-  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2);
   display: flex; align-items: center; gap: 12px;
 }
 .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
@@ -212,8 +212,8 @@ footer { font-size: 13px; color: var(--ink-3); }
       <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.</p>
       <ul class="highlights">
         <li><b>State of the art on ILIAS-100M</b> instance retrieval (42.0 mAP@1000) with no training and no re-indexing of the gallery.</li>
-        <li><b>Web-scale retrieval evaluation, 20&times; cheaper:</b> 100M-image mAP estimated from a 5% sample to within about 0.01.</li>
-        <li><b>Metric VQA:</b> a benchmark showing which visual cues VLMs from 3B to 397B parameters use to judge object size.</li>
+        <li><b>Web-scale retrieval evaluation with 20&times; less indexing:</b> 100M-image mAP estimated from a 5% sample to within about 0.01.</li>
+        <li><b>Metric VQA:</b> across 12 open VLMs (3B&ndash;397B), target identity is the most load-bearing cue for object size and scene geometry goes largely unused; even the largest trail a text-only LLM on real scenes.</li>
       </ul>
       <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained vision backbones and open vision-language models. Before computer vision I worked in aeroelasticity, on data-driven flutter warning from flight sensor data.</p>
     </section>
@@ -252,7 +252,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           </div>
                   <figure class="teaser">
             <a href="assets/o2i_teaser.webp"><img src="assets/o2i_teaser.webp" width="1600" height="799" loading="lazy" alt="Three panels. A: a tight query photo of a red backpack and a wide street scene containing the same backpack produce dissimilar features. B: averaging query features over several object scales matches the wide gallery image. C: object-centric crops of gallery images improve reranking."></a>
-            <figcaption>The same object at different object-to-image ratios gives dissimilar features (A). Query-side averaging over object scales, gray-pad (GP) or masked scale augmentation (MSA), fixes first-stage retrieval (B); object-centric gallery crops fix reranking (C). Click to enlarge.</figcaption>
+            <figcaption>The same object at different object-to-image ratios gives dissimilar features (A). Query-side averaging over object scales, gray-pad (GP) or masked scale augmentation (MSA), fixes first-stage retrieval (B); object-centric gallery crops fix reranking (C). Select the figure to enlarge it.</figcaption>
           </figure>
         </li>
 
@@ -261,7 +261,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Estimates full-scale retrieval mAP from a 5% sample of the gallery (20&times; less indexing) to within about 0.01 (mean absolute error 0.005), across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude better than scoring the subset directly. Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. Key idea: the number of distractors that outrank a positive is binomial in gallery size.</p>
+            <p class="finding">Key idea: the number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample predicts the metric at any scale. From a 5% sample (20&times; less indexing) the estimate matches full-scale mAP to within about 0.01, across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude better than scoring the subset directly. Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -295,7 +295,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">WACV 2026</b><span>conference</span></div>
+          <div class="venue"><b class="accepted">WACV 2026</b><span>2026</span></div>
           <div class="pub-body">
             <h4>Decoupling Shape and Texture in <span class="nw">SAM-2</span> via Controlled Texture Replacement</h4>
             <p class="authors">Inbal Cohen*, <strong>Boaz Meivar</strong>*, Peihan Tu, Shai Avidan, Gal Oren <span class="note">· *equal contribution</span></p>
@@ -324,11 +324,11 @@ footer { font-size: 13px; color: var(--ink-3); }
       <ol class="pubs">
 
         <li class="pub">
-          <div class="venue"><b class="accepted">Sci. Reports</b><span>2026 · journal</span></div>
+          <div class="venue"><b>Sci. Reports</b><span>2026</span></div>
           <div class="pub-body">
             <h4><span class="nw">Measurement-aware</span> learning for reliable <span class="nw">grain-boundary</span> analysis in quantitative metallography</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren</p>
-            <p class="finding">A context-ablation study shows that global context is a first-order condition for detecting weak grain boundaries. Our method, MLOGRAPHY++, is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
+            <p class="finding">A context-ablation study shows that global context is a first-order condition for detecting weak grain boundaries. MLOGRAPHY++ is validated on the grain-size measurement itself, not only on pixel accuracy.</p>
             <div class="actions">
               <a href="https://doi.org/10.1038/s41598-026-58714-5">Paper</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026metallography,
@@ -348,7 +348,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">Annals BME</b><span>2026 · journal</span></div>
+          <div class="venue"><b>Annals BME</b><span>2026</span></div>
           <div class="pub-body">
             <h4>Simultaneous 3D Quantification of Fluid&ndash;Structure Interaction in a <span class="nw">Patient-Averaged</span> Left Ventricle: A Lagrangian Experimental Framework</h4>
             <p class="authors">Omer Hadar, <strong>Boaz Meivar</strong>, Shai Avidan, Alex Liberzon</p>
@@ -370,7 +370,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">AIAA Journal</b><span>2025 · journal</span></div>
+          <div class="venue"><b>AIAA Journal</b><span>2025</span></div>
           <div class="pub-body">
             <h4><span class="nw">Data-Driven</span> Approach to the Development of an Aeroelastic Flutter Precursor</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Moti Karpel</p>
@@ -407,7 +407,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="education">
       <h2 class="eyebrow" id="education">Education</h2>
       <ol class="timeline">
-        <li><span class="when">Current</span><span class="what"><b>Ph.D., Computer Vision</b><span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
+        <li><span class="when">Current</span><span class="what"><b>Ph.D., Computer Vision</b><span>Tel Aviv University</span></span></li>
         <li><span class="when">Completed</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
       </ol>
     </section>
