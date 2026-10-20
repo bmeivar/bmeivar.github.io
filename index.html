@@ -9,7 +9,9 @@
 <meta property="og:title" content="Boaz Meivar · Computer Vision PhD Student, Tel Aviv University">
 <meta property="og:description" content="Robustness of visual representations to object scale and context; retrieval evaluation at 100M scale; evidence use in vision-language models.">
 <meta property="og:url" content="https://bmeivar.github.io/">
-<meta property="og:image" content="https://bmeivar.github.io/assets/o2i_teaser.webp">
+<meta property="og:image" content="https://bmeivar.github.io/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Boaz Meivar: algorithms researcher and PhD student in AI (computer vision) at Tel Aviv University. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
@@ -80,13 +82,6 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 .headshot { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--rule); background: var(--surface); }
 .rail h1 { font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
 .role { color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 6px 0 0; }
-.status {
-  display: inline-flex; line-height: 1.35; align-items: center; gap: 8px;
-  font-size: 13.5px; font-weight: 500; color: var(--ink);
-  background: var(--surface); border: 1px solid var(--rule); border-radius: 999px;
-  padding: 6px 12px; width: fit-content;
-}
-.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #1f9d55; flex: none; }
 .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
 .links li { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
 .links .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex: none; }
@@ -106,12 +101,7 @@ section { display: grid; gap: 20px; min-width: 0; }
 .lede em { font-style: normal; color: var(--accent); }
 .prose { color: var(--ink-2); max-width: 40em; margin: 0; }
 
-.themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.theme { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 6px; align-content: start; }
-.theme h3 { font-size: 16px; font-weight: 600; line-height: 1.35; }
-.theme h3 a { color: var(--ink); }
 .pub { scroll-margin-top: 24px; }
-.theme p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
 
 .highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 44em; }
 .highlights li { position: relative; padding-left: 18px; font-size: 15.5px; color: var(--ink-2); }
@@ -180,7 +170,6 @@ footer { font-size: 13px; color: var(--ink-3); }
 @media (max-width: 880px) {
   .page { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 32px 56px; }
   .rail { position: static; }
-  .themes { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 520px) {
   .pub, .timeline li, .skills div { grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -197,7 +186,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <img class="headshot" src="assets/headshot.webp" width="120" height="120" alt="Boaz Meivar">
     <div>
       <h1>Boaz Meivar</h1>
-      <p class="role">Algorithms researcher · PhD student in AI<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
+      <p class="role">PhD student in AI (computer vision) · algorithms researcher<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
     </div>
     <ul class="links">
       <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
@@ -261,7 +250,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. The number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample predicts the metric at any scale. The estimate converges to full-scale mAP across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude more accurate than scoring the subset directly.</p>
+            <p class="finding">Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. The number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample yields the metric at any scale. From a 5% sample, the tail-aware (EVT) estimate lands within about 0.01 of full-scale mAP (mean absolute error 0.005) across five backbones, on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude closer than scoring the subset directly.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -354,7 +343,7 @@ footer { font-size: 13px; color: var(--ink-3); }
             <p class="authors">Omer Hadar*, <strong>Boaz Meivar</strong>*, Shai Avidan, Alex Liberzon <span class="note">· *equal contribution</span></p>
             <div class="with-media">
               <p class="finding">SAM-2 segmentation combined with 3D particle tracking and multi-media ray tracing gives co-registered, time-resolved 3D wall motion and intraventricular flow in a compliant heart model.</p>
-              <figure class="media"><img src="assets/lv_beating.webp" width="300" height="390" loading="lazy" alt="Animated 3D point cloud of the left-ventricle wall contracting and relaxing over a heart cycle, with tracked points shown in color."><figcaption>Reconstructed ventricle wall over one heart cycle.</figcaption></figure>
+              <figure class="media"><img src="assets/lv_beating.webp" width="240" height="312" loading="lazy" alt="Animated 3D point cloud of the left-ventricle wall contracting and relaxing over a heart cycle, with tracked points shown in color."><figcaption>Reconstructed ventricle wall over one heart cycle.</figcaption></figure>
             </div>
             <div class="actions">
               <a href="https://doi.org/10.1007/s10439-026-04293-5">Paper</a>
@@ -411,9 +400,9 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="skills">
       <h2 class="eyebrow" id="skills">Skills</h2>
       <dl class="skills">
-        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
+        <div><dt>Models</dt><dd>Self-supervised learning; foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
         <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
-        <div><dt>Also</dt><dd>Self-supervised learning, time-series analysis and anomaly detection, physics simulation and optimization; MATLAB, TensorFlow</dd></div>
+        <div><dt>Also</dt><dd>Time-series analysis and anomaly detection, physics simulation and optimization; MATLAB, TensorFlow</dd></div>
         <div><dt>Languages</dt><dd>Hebrew, English, French</dd></div>
       </dl>
     </section>
@@ -421,9 +410,9 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="education">
       <h2 class="eyebrow" id="education">Education</h2>
       <ol class="timeline">
-        <li><span class="when">2024&ndash;2028</span><span class="what"><b>Ph.D., Artificial Intelligence</b> (expected 2028)<span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
-        <li><span class="when">2020&ndash;2022</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
-        <li><span class="when">2008&ndash;2013</span><span class="what"><b>B.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · Dean's List; 2nd place, Technion security development competition (2013)</span></span></li>
+        <li><span class="when">2024&ndash;2028</span><span class="what"><b>PhD, Artificial Intelligence</b> (expected 2028)<span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
+        <li><span class="when">2020&ndash;2022</span><span class="what"><b>MSc, Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
+        <li><span class="when">2008&ndash;2013</span><span class="what"><b>BSc, Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · Dean's List; 2nd place, Technion security development competition (2013)</span></span></li>
       </ol>
     </section>
 
