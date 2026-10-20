@@ -213,7 +213,7 @@ footer { font-size: 13px; color: var(--ink-3); }
       <ul class="highlights">
         <li><b>State of the art on ILIAS-100M</b> instance retrieval (42.0 mAP@1000) with no training and no re-indexing of the gallery.</li>
         <li><b>Web-scale retrieval evaluation with 20&times; less indexing:</b> 100M-image mAP estimated from a 5% sample to within about 0.01.</li>
-        <li><b>Metric VQA:</b> across 12 open VLMs (3B&ndash;397B), target identity is the most load-bearing cue for object size and scene geometry goes largely unused; even the largest trail a text-only LLM on real scenes.</li>
+        <li><b>Metric VQA:</b> across 12 open VLMs (3B&ndash;397B), target identity is the most load-bearing cue for object size and scene geometry goes largely unused; even the largest trail a text-only frontier LLM on real-world scenes.</li>
       </ul>
       <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained vision backbones and open vision-language models. Before computer vision I worked in aeroelasticity, on data-driven flutter warning from flight sensor data.</p>
     </section>
@@ -237,7 +237,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Beyond Resolution: <span class="nw">Object-to-Image</span> Ratio Mismatch in Instance Retrieval</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Ofir Kedem, Amit Edenzon, Gal Chechik, Shai Avidan</p>
-            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Query-side scale augmentation plus an OWLv2 crop reranker reaches state of the art on ILIAS-100M (42.0 mAP@1000, from 29.2 before reranking) with no training and no change to the gallery index; a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
+            <p class="finding">On 3,021 Objaverse objects rendered at five camera distances, over 80% of the cross-distance retrieval loss comes from object-to-image ratio mismatch rather than resolution, for 9 of 12 pretrained backbones. Tight queries retrieve wide gallery images more reliably than the reverse. Query-side scale augmentation lifts ILIAS-100M to 29.2 mAP@1000 and an OWLv2 crop reranker to 42.0, with no training and no change to the gallery index; a LoRA fine-tune matches the query-side gains in a single forward pass.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.11489">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026beyond,
@@ -252,7 +252,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           </div>
                   <figure class="teaser">
             <a href="assets/o2i_teaser.webp"><img src="assets/o2i_teaser.webp" width="1600" height="799" loading="lazy" alt="Three panels. A: a tight query photo of a red backpack and a wide street scene containing the same backpack produce dissimilar features. B: averaging query features over several object scales matches the wide gallery image. C: object-centric crops of gallery images improve reranking."></a>
-            <figcaption>The same object at different object-to-image ratios gives dissimilar features (A). Query-side averaging over object scales, gray-pad (GP) or masked scale augmentation (MSA), fixes first-stage retrieval (B); object-centric gallery crops fix reranking (C). Select the figure to enlarge it.</figcaption>
+            <figcaption>The same object at different object-to-image ratios gives dissimilar features (A). Query-side averaging over object scales, gray-pad (GP) or masked scale augmentation (MSA), fixes first-stage retrieval (B); object-centric gallery crops fix reranking (C).</figcaption>
           </figure>
         </li>
 
@@ -261,7 +261,7 @@ footer { font-size: 13px; color: var(--ink-3); }
           <div class="pub-body">
             <h4>Web Scale on a Budget: <span class="nw">Tail-Aware</span> Retrieval Evaluation</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Shai Avidan</p>
-            <p class="finding">Key idea: the number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample predicts the metric at any scale. From a 5% sample (20&times; less indexing) the estimate matches full-scale mAP to within about 0.01, across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude better than scoring the subset directly. Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model.</p>
+            <p class="finding">Full indexing at 100M costs hundreds of GPU-hours and about 200&nbsp;GB of descriptors per model. The number of distractors that outrank a positive is binomial in gallery size, so a per-query hardness estimated on a small sample predicts the metric at any scale. The estimate converges to full-scale mAP across five backbones on ILIAS and INSTRE at 100M images and on the full 759k-distractor GLDv2 pool, an order of magnitude more accurate than scoring the subset directly.</p>
             <div class="actions">
               <a href="https://arxiv.org/abs/2610.17986">arXiv</a>
               <details><summary>BibTeX</summary><pre class="bib">@article{meivar2026webscale,
@@ -295,7 +295,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         </li>
 
         <li class="pub">
-          <div class="venue"><b class="accepted">WACV 2026</b><span>2026</span></div>
+          <div class="venue"><b class="accepted">WACV 2026</b><span>published</span></div>
           <div class="pub-body">
             <h4>Decoupling Shape and Texture in <span class="nw">SAM-2</span> via Controlled Texture Replacement</h4>
             <p class="authors">Inbal Cohen*, <strong>Boaz Meivar</strong>*, Peihan Tu, Shai Avidan, Gal Oren <span class="note">· *equal contribution</span></p>
