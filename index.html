@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://bmeivar.github.io/assets/o2i_teaser.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Boaz Meivar: PhD student in computer vision at Tel Aviv University. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
+<meta name="description" content="Boaz Meivar: algorithms researcher and PhD student in AI (computer vision) at Tel Aviv University. Robustness of visual representations to object scale and context; retrieval evaluation; evidence use in vision-language models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -167,6 +167,10 @@ pre.bib {
 .media figcaption { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
 @media (max-width: 520px) { .with-media { grid-template-columns: minmax(0, 1fr); } .media { max-width: 200px; } }
 
+.quote { margin: 4px 0 0; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 6px 6px 0; display: grid; gap: 6px; max-width: 44em; }
+.quote p { margin: 0; font-size: 15.5px; color: var(--ink); }
+.quote footer { font-size: 13px; color: var(--ink-3); }
+
 /* skills */
 .skills { margin: 0; display: grid; gap: 12px; }
 .skills div { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px; }
@@ -202,7 +206,7 @@ footer { font-size: 13px; color: var(--ink-3); }
     <div class="monogram" aria-hidden="true">BM</div>
     <div>
       <h1>Boaz Meivar</h1>
-      <p class="role">PhD student in computer vision<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span></p>
+      <p class="role">Algorithms researcher · PhD student in AI<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
     </div>
     <span class="status">Seeking research / applied scientist internships</span>
     <ul class="links">
@@ -222,7 +226,7 @@ footer { font-size: 13px; color: var(--ink-3); }
         <li><a href="#p-webscale"><b>Web-scale retrieval evaluation with 20&times; less indexing:</b></a> 100M-image mAP estimated from a 5% sample to within about 0.01.</li>
         <li><a href="#p-metricvqa"><b>Metric VQA:</b></a> across 12 open VLMs (3B&ndash;397B), models lean most on what the object is when judging its size and largely ignore global scene geometry; even the largest trail a text-only frontier LLM on real-world scenes.</li>
       </ul>
-      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained vision backbones and open vision-language models. Before computer vision I worked in aeroelasticity, on data-driven flutter warning from flight sensor data.</p>
+      <p class="prose">I design controlled experiments that vary one factor at a time (object scale, camera distance, visible context, gallery size) and measure its effect across many pretrained vision backbones and open vision-language models. Before the PhD I spent eight years in industry R&amp;D, first as a dynamics and loads engineer and then as a computer vision algorithm developer, and I have worked as a deep learning algorithm researcher on self-supervised methods for computer vision since 2022.</p>
     </section>
 
     <section aria-labelledby="papers">
@@ -406,19 +410,35 @@ footer { font-size: 13px; color: var(--ink-3); }
       </ol>
     </section>
 
+    <section aria-labelledby="experience">
+      <h2 class="eyebrow" id="experience">Experience</h2>
+      <ol class="timeline">
+        <li><span class="when">2022&ndash;now</span><span class="what"><b>Deep Learning Algorithm Researcher</b><span>Self-supervised methods for computer vision.</span></span></li>
+        <li><span class="when">2020&ndash;2022</span><span class="what"><b>Computer Vision Algorithm Developer</b> · stealth startup<span>Computer vision algorithms in a product-driven environment. Started and taught a 24-hour Python workshop for the engineering team.</span></span></li>
+        <li><span class="when">2014&ndash;2020</span><span class="what"><b>Dynamics and Loads Engineer</b> · stealth startup<span>Multi-body dynamics simulations, calibrated with genetic optimization algorithms.</span></span></li>
+      </ol>
+      <blockquote class="quote">
+        <p>&ldquo;Boaz has a rare ability to take apart complex scientific material and build intuitive solutions for challenging computer vision tasks.&rdquo;</p>
+        <footer>Paz Kuflik, image processing algorithms developer, same algorithms team for two years</footer>
+      </blockquote>
+    </section>
+
     <section aria-labelledby="skills">
       <h2 class="eyebrow" id="skills">Skills</h2>
       <dl class="skills">
         <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
         <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
+        <div><dt>Also</dt><dd>Self-supervised learning, time-series analysis and anomaly detection, physics simulation and optimization; MATLAB, TensorFlow</dd></div>
+        <div><dt>Languages</dt><dd>Hebrew, English, French</dd></div>
       </dl>
     </section>
 
     <section aria-labelledby="education">
       <h2 class="eyebrow" id="education">Education</h2>
       <ol class="timeline">
-        <li><span class="when">Current</span><span class="what"><b>Ph.D. candidate, computer vision</b><span>Tel Aviv University</span></span></li>
-        <li><span class="when">Completed</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
+        <li><span class="when">2024&ndash;2028</span><span class="what"><b>Ph.D., Artificial Intelligence</b> (expected 2028)<span>Tel Aviv University · advisor: Prof. Shai Avidan</span></span></li>
+        <li><span class="when">2020&ndash;2022</span><span class="what"><b>M.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · advisor: Prof. Moti Karpel · thesis: data-driven aeroelastic flutter precursor</span></span></li>
+        <li><span class="when">2008&ndash;2013</span><span class="what"><b>B.Sc., Aerospace Engineering</b><span>Technion &ndash; Israel Institute of Technology · Dean's List; 2nd place, Technion security development competition (2013)</span></span></li>
       </ol>
     </section>
 
