@@ -1,1 +1,5 @@
 .preview.html
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/cv.pdf
