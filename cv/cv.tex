@@ -32,7 +32,7 @@
 % \pub{venue}{badge}{title}{authors}{summary}{links}
 \newcommand{\pub}[6]{%
   \noindent\begin{tabularx}{\linewidth}{@{}p{0.95in}X@{}}
-  {\sffamily\small\bfseries #1}\ifblank{#2}{}{\newline{\sffamily\footnotesize\color{ink3}#2}}
+  \raggedright{\sffamily\small\bfseries #1}\ifblank{#2}{}{\newline{\sffamily\footnotesize\color{ink3}#2}}
   & \textbf{#3}\newline{\small #4}\newline{\small #5}\ifblank{#6}{}{\newline{\footnotesize #6}}
   \end{tabularx}\par\vspace{6pt}}
 \newcommand{\me}{\underline{Boaz Meivar}}
@@ -92,7 +92,7 @@ I study when and why visual representations break: how object retrieval degrades
 {\href{https://doi.org/10.1109/WACV61042.2026.00397}{paper} \textperiodcentered\ \href{https://arxiv.org/abs/2505.16540}{arXiv:2505.16540} \textperiodcentered\ \href{https://github.com/Scientific-Computing-Lab/TextureSAM}{code}}
 
 \vspace{2pt}{\sffamily\small\bfseries Machine learning for science and engineering}\par\vspace{4pt}
-\pub{Sci.\ Rep.\ 2026}{\qone}{Measurement-aware learning for reliable grain-boundary analysis in quantitative metallography}
+\pub{Nature Sci.\ Rep.\ 2026}{\qone}{Measurement-aware learning for reliable grain-boundary analysis in quantitative metallography}
 {\me, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren}
 {Removing global context sharply degrades detection of weak grain boundaries; MLOGRAPHY++ is validated on the grain-size measurement itself, not only on pixel accuracy.}
 {\href{https://doi.org/10.1038/s41598-026-58714-5}{doi:10.1038/s41598-026-58714-5}}

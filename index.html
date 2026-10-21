@@ -112,14 +112,14 @@ section { display: grid; gap: 20px; min-width: 0; }
 /* publications */
 .pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .pub {
-  display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px;
+  display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px;
   padding: 22px 0; border-top: 1px solid var(--rule);
 }
 .pub:last-child { border-bottom: 1px solid var(--rule); }
 .venue { display: grid; gap: 4px; align-content: start; }
 .venue b {
   font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em;
-  color: var(--ink); background: var(--chip); border-radius: 4px; padding: 3px 8px; width: fit-content;
+  color: var(--ink); background: var(--chip); border-radius: 4px; padding: 3px 8px; width: fit-content; white-space: nowrap;
 }
 .venue b.accepted { background: var(--accent-soft); color: var(--accent); }
 .venue i.q1 {
@@ -158,13 +158,13 @@ pre.bib {
 
 /* skills */
 .skills { margin: 0; display: grid; gap: 12px; }
-.skills div { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px; }
+.skills div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px; }
 .skills dt { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-3); padding-top: 2px; }
 .skills dd { margin: 0; font-size: 15px; color: var(--ink-2); }
 
 /* background */
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.timeline li { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 20px; }
+.timeline li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px; }
 .timeline .when { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-3); padding-top: 2px; }
 .timeline .what b { font-weight: 600; }
 .timeline .what span { display: block; color: var(--ink-2); font-size: 14.5px; }
@@ -319,7 +319,7 @@ footer { font-size: 13px; color: var(--ink-3); }
       <ol class="pubs">
 
         <li class="pub">
-          <div class="venue"><b>Sci. Rep.</b><span>2026</span><i class="q1" title="Q1 journal (SCImago)">Q1</i></div>
+          <div class="venue"><b>Nature Sci. Rep.</b><span>2026</span><i class="q1" title="Q1 journal (SCImago)">Q1</i></div>
           <div class="pub-body">
             <h4><span class="nw">Measurement-aware</span> learning for reliable <span class="nw">grain-boundary</span> analysis in quantitative metallography</h4>
             <p class="authors"><strong>Boaz Meivar</strong>, Inbal Cohen, Matan Rusanovsky, Francis Quintal Lauzon, Julien Robitaille, Ofer Be'eri, Shai Avidan, Gal Oren</p>
