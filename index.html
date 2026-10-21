@@ -82,6 +82,12 @@ h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 .headshot { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid var(--rule); background: var(--surface); }
 .rail h1 { font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
 .role { color: var(--ink-2); font-size: 15px; line-height: 1.5; margin: 6px 0 0; }
+.contact {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 9px 18px; border-radius: 6px;
+  background: var(--accent); color: var(--bg); font-weight: 600; font-size: 15px; text-decoration: none;
+}
+.contact:hover { opacity: 0.9; text-decoration: none; }
+.contact:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
 .links li { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
 .links .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); width: 64px; flex: none; }
@@ -192,6 +198,9 @@ footer { font-size: 13px; color: var(--ink-3); }
       <h1>Boaz Meivar</h1>
       <p class="role">PhD student, computer vision<br>Deep Learning Researcher, computer vision startup<br>Tel Aviv University · advised by <span class="nw">Prof. Shai Avidan</span><br>Tel Aviv, Israel</p>
     </div>
+    <a class="contact" href="mailto:bmeivar@gmail.com">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      Contact me</a>
     <ul class="links">
       <li><span class="k">CV</span><a class="v" href="cv/Boaz_Meivar_CV.pdf" download>Download PDF</a></li>
       <li><span class="k">Email</span><a class="v email" href="mailto:bmeivar@gmail.com">bmeivar@gmail.com</a></li>
