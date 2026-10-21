@@ -26,7 +26,7 @@
 \newcommand{\entry}[4]{%
   \noindent\begin{tabularx}{\linewidth}{@{}p{0.95in}X@{}}
   {\leavevmode\sffamily\small\color{ink3}#1} & \textbf{#2}\ifblank{#3}{}{\ \textperiodcentered\ #3}
-  \ifblank{#4}{}{\newline{\small #4}}
+  \ifblank{#4}{}{\par{\small #4}}
   \end{tabularx}\par\vspace{5pt}}
 
 % \pub{venue}{badge}{title}{authors}{summary}{links}
@@ -35,13 +35,14 @@
   \raggedright{\sffamily\small\bfseries #1}\ifblank{#2}{}{\newline{\sffamily\footnotesize\color{ink3}#2}}
   & \textbf{#3}\newline{\small #4}\newline{\small #5}\ifblank{#6}{}{\newline{\footnotesize #6}}
   \end{tabularx}\par\vspace{6pt}}
+\newcommand{\bul}[1]{\par\hangindent=1em\hangafter=1\noindent\makebox[1em][l]{\textbullet}#1}
 \newcommand{\me}{\underline{Boaz Meivar}}
 \newcommand{\qone}{{\color{accent}\textbf{Q1}}}
 
 \begin{document}
 
 {\sffamily\bfseries\LARGE Boaz Meivar}\par\vspace{3pt}
-{\small PhD student, computer vision, Tel Aviv University \textperiodcentered\ advised by Prof.\ Shai Avidan \textperiodcentered\ Tel Aviv, Israel}\par\vspace{2pt}
+{\small PhD candidate, computer vision, Tel Aviv University \textperiodcentered\ advised by Prof.\ Shai Avidan \textperiodcentered\ Tel Aviv, Israel}\par\vspace{2pt}
 {\small\href{mailto:bmeivar@gmail.com}{bmeivar@gmail.com} \quad
 \href{https://bmeivar.github.io}{bmeivar.github.io} \quad
 \href{https://github.com/bmeivar}{github.com/bmeivar} \quad
@@ -64,7 +65,7 @@ I study when and why visual representations break: how object retrieval degrades
 \entry{2008--2013}{BSc, Aerospace Engineering}{Technion -- Israel Institute of Technology}{Dean's List}
 
 \section{Experience}
-\entry{2022--now}{Deep Learning Algorithm Researcher}{computer vision stealth startup}{Originated and led research on retrieving arbitrary objects in massive geospatial datasets from as little as one example, and built an MVP, now a cornerstone product. Combines active learning, self-supervised foundation models and gradient-boosted trees. Patent pending.}
+\entry{2022--now}{Deep Learning Algorithm Researcher}{computer vision stealth startup}{\bul{Conceived and carried out the research, and built the MVP from scratch: retrieval of arbitrary objects across thousands of km\textsuperscript{2} of geospatial imagery per search, from as little as one example.}\bul{Combines self-supervised foundation models, active learning and gradient-boosted trees.}\bul{The MVP became a cornerstone product of the company.}\bul{Patent pending, first-named inventor.}}
 \entry{2020--2022}{Computer Vision Algorithm Developer}{aerospace industry}{Maintained and optimized a dim-target detection algorithm, wrote simulations in MATLAB, and ran operational analyses to improve its performance. Started and taught a 24-hour Python workshop for the engineering team.}
 \entry{2014--2020}{Dynamics and Loads Engineer}{aerospace industry}{Multi-body dynamics simulations, calibrated with genetic optimization algorithms.}
 
@@ -74,6 +75,10 @@ I study when and why visual representations break: how object retrieval degrades
 \pub{WACV 2027}{accepted}{Object-Only Is Not Context-Free: A Counterfactual Diagnostic for Context Removal in Object Retrieval}
 {\me, Shai Avidan}
 {KAP, the Keyhole Aperture Probe, measures how much an object's embedding depends on its surroundings, by revealing more of the scene around the object while the object region used for pooling stays fixed.}{}
+\pub{WACV 2026}{}{Decoupling Shape and Texture in SAM-2 via Controlled Texture Replacement}
+{Inbal Cohen*, \me*, Peihan Tu, Shai Avidan, Gal Oren}
+{Fine-tuning with incrementally stronger texture replacement gives TextureSAM, which segments better where texture defines the boundary.}
+{\href{https://doi.org/10.1109/WACV61042.2026.00397}{paper} \textperiodcentered\ \href{https://arxiv.org/abs/2505.16540}{arXiv:2505.16540} \textperiodcentered\ \href{https://github.com/Scientific-Computing-Lab/TextureSAM}{code}}
 \pub{arXiv 2026}{under review}{Beyond Resolution: Object-to-Image Ratio Mismatch in Instance Retrieval}
 {\me, Ofir Kedem, Amit Edenzon, Gal Chechik, Shai Avidan}
 {Object-to-image ratio mismatch, not resolution, explains over 80\% of cross-distance retrieval loss for 9 of 12 backbones. Query-side scale augmentation reaches 29.2 mAP@1000 on ILIAS-100M, and adding an OWLv2 crop reranker gives a state-of-the-art 42.0, all training-free and without re-indexing the gallery.}
@@ -86,10 +91,6 @@ I study when and why visual representations break: how object retrieval degrades
 {\me, Shaked Perek, Shani Shvartzman, Eli Schwartz, Shai Avidan}
 {Monocular metric object size is ill-posed, so counterfactuals separate unused evidence from redundant evidence. Across 12 open VLMs (3B to 397B) and six evidence channels, object identity is the strongest cue and global scene geometry is largely unused.}
 {\href{https://arxiv.org/abs/2606.24335}{arXiv:2606.24335} \textperiodcentered\ \href{https://github.com/bmeivar/MetricVQA}{code}}
-\pub{WACV 2026}{}{Decoupling Shape and Texture in SAM-2 via Controlled Texture Replacement}
-{Inbal Cohen*, \me*, Peihan Tu, Shai Avidan, Gal Oren}
-{Fine-tuning with incrementally stronger texture replacement gives TextureSAM, which segments better where texture defines the boundary.}
-{\href{https://doi.org/10.1109/WACV61042.2026.00397}{paper} \textperiodcentered\ \href{https://arxiv.org/abs/2505.16540}{arXiv:2505.16540} \textperiodcentered\ \href{https://github.com/Scientific-Computing-Lab/TextureSAM}{code}}
 
 \vspace{2pt}{\sffamily\small\bfseries Machine learning for science and engineering}\par\vspace{4pt}
 \pub{Nature Sci.\ Rep.\ 2026}{\qone}{Measurement-aware learning for reliable grain-boundary analysis in quantitative metallography}
@@ -111,7 +112,7 @@ I study when and why visual representations break: how object retrieval degrades
 {\leavevmode\sffamily\small\color{ink3}Models} & \small DINOv2, DINOv3, SigLIP2, SAM / SAM-2, OWLv2, open VLMs (Qwen-VL and InternVL families)\\[2pt]
 {\leavevmode\sffamily\small\color{ink3}Engineering} & \small Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search\\[2pt]
 {\leavevmode\sffamily\small\color{ink3}Also} & \small Time-series analysis and anomaly detection, physics simulation and optimization; MATLAB\\[2pt]
-{\leavevmode\sffamily\small\color{ink3}Languages} & \small Hebrew, English, French
+{\leavevmode\sffamily\small\color{ink3}Languages} & \small Hebrew, English
 \end{tabularx}
 
 \end{document}
