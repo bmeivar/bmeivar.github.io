@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bmeivar.github.io/sitemap.xml
