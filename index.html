@@ -163,11 +163,6 @@ pre.bib {
 .media figcaption { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
 @media (max-width: 520px) { .with-media { grid-template-columns: minmax(0, 1fr); } .media { max-width: 150px; } }
 
-/* skills */
-.skills { margin: 0; display: grid; gap: 12px; }
-.skills div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px; }
-.skills dt { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-3); padding-top: 2px; }
-.skills dd { margin: 0; font-size: 15px; color: var(--ink-2); }
 
 /* background */
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -185,7 +180,7 @@ footer { font-size: 13px; color: var(--ink-3); }
   .rail { position: static; }
 }
 @media (max-width: 520px) {
-  .pub, .timeline li, .skills div { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .pub, .timeline li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .venue { grid-auto-flow: column; justify-content: start; align-items: center; gap: 10px; }
   .lede { font-size: 19px; }
 }
@@ -216,11 +211,12 @@ footer { font-size: 13px; color: var(--ink-3); }
   <main>
     <section aria-labelledby="about">
       <h2 class="eyebrow" id="about">Research</h2>
-      <p class="lede">I study <em>when and why visual representations break</em>: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.</p>
-      <h3 class="group-label">Key results</h3>
+      <p class="lede">I&rsquo;m a computer vision researcher and PhD candidate at Tel Aviv University, with four years turning research into product at a startup and eight years in aerospace engineering before that. I study <em>when and why visual representations break</em>: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.</p>
+      <h3 class="group-label">Highlights</h3>
       <ul class="highlights">
         <li><a href="#p-o2i"><b>State of the art on ILIAS-100M</b></a> instance retrieval (42.0 mAP@1000), training-free and without re-indexing the gallery.</li>
         <li><a href="#p-webscale"><b>Web-scale retrieval evaluation with 20&times; less indexing</b></a>, accurate to about 0.01 mAP.</li>
+        <li><a href="#exp-startup"><b>Single-example object retrieval across thousands of km&sup2; of geospatial imagery</b></a> (industry): conceived the research and built a minimum viable product from scratch, now a cornerstone company product; patent pending.</li>
         <li><a href="#p-metricvqa"><b>Ill-posed tasks as a new lens on vision-language models:</b></a> when no single cue determines the answer, counterfactuals reveal which evidence a model actually uses.</li>
       </ul>
     </section>
@@ -414,27 +410,17 @@ footer { font-size: 13px; color: var(--ink-3); }
     <section aria-labelledby="experience">
       <h2 class="eyebrow" id="experience">Experience</h2>
       <ol class="timeline">
-        <li><span class="when">2022&ndash;now</span><span class="what"><b>Deep Learning Algorithm Researcher</b> · computer vision stealth startup
+        <li id="exp-startup"><span class="when">2022&ndash;now</span><span class="what"><b>Deep Learning Algorithm Researcher</b> · computer vision stealth startup
         <ul class="bullets">
-          <li>Conceived and carried out the research, and built an MVP from scratch: retrieval of arbitrary objects across thousands of km&sup2; of geospatial imagery per search, from as little as one example.</li>
+          <li>Conceived and carried out the research, and built a minimum viable product from scratch.</li>
+          <li>Retrieves arbitrary objects across thousands of km&sup2; of geospatial imagery per search, from as little as one example.</li>
           <li>Combines self-supervised foundation models, active learning and gradient-boosted trees.</li>
-          <li>The MVP became a cornerstone product of the company.</li>
+          <li>Now a cornerstone product of the company.</li>
           <li>Patent pending, first-named inventor.</li>
         </ul></span></li>
         <li><span class="when">2020&ndash;2022</span><span class="what"><b>Computer Vision Algorithm Developer</b> · aerospace industry<span>Maintained and optimized a dim-target detection algorithm, wrote simulations in MATLAB, and ran operational analyses to improve its performance. Started and taught a 24-hour Python workshop for the engineering team.</span></span></li>
         <li><span class="when">2014&ndash;2020</span><span class="what"><b>Dynamics and Loads Engineer</b> · aerospace industry<span>Multi-body dynamics simulations, calibrated with genetic optimization algorithms.</span></span></li>
       </ol>
-    </section>
-
-    <section aria-labelledby="skills">
-      <h2 class="eyebrow" id="skills">Skills</h2>
-      <dl class="skills">
-        <div><dt>Methods</dt><dd>Self-supervised learning, few-shot retrieval, active learning, gradient-boosted trees, LoRA fine-tuning</dd></div>
-        <div><dt>Models</dt><dd>Foundation-model backbones (DINOv2, DINOv3, SigLIP2), SAM / SAM-2, OWLv2, open vision-language models (Qwen-VL and InternVL families)</dd></div>
-        <div><dt>Engineering</dt><dd>Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search; LoRA fine-tuning of vision backbones and VLMs</dd></div>
-        <div><dt>Also</dt><dd>Time-series analysis and anomaly detection, physics simulation and optimization; MATLAB</dd></div>
-        <div><dt>Languages</dt><dd>Hebrew, English</dd></div>
-      </dl>
     </section>
 
     <section aria-labelledby="education">

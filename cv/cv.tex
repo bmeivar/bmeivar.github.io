@@ -10,6 +10,7 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{etoolbox}
+\usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 
 \definecolor{accent}{HTML}{0F6A73}
@@ -50,12 +51,13 @@
 \href{https://www.semanticscholar.org/author/2148726410}{Semantic Scholar}}
 
 \section{Research}
-I study when and why visual representations break: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.
+I'm a computer vision researcher and PhD candidate at Tel Aviv University, with four years turning research into product at a startup and eight years in aerospace engineering before that. I study when and why visual representations break: how object retrieval degrades with object scale and context, how to evaluate retrieval at web scale at a fraction of the cost, and whether vision-language models use the evidence in front of them.
 
-\vspace{4pt}{\sffamily\small\bfseries Key results}
+\vspace{4pt}{\sffamily\small\bfseries Highlights}
 \begin{itemize}[leftmargin=1.2em,itemsep=1pt,topsep=2pt]
 \item \textbf{State of the art on ILIAS-100M} instance retrieval (42.0 mAP@1000), training-free and without re-indexing the gallery.
 \item \textbf{Web-scale retrieval evaluation with 20$\times$ less indexing}, accurate to about 0.01 mAP.
+\item \textbf{Single-example object retrieval across thousands of km\textsuperscript{2} of geospatial imagery} (industry): conceived the research and built a minimum viable product from scratch, now a cornerstone company product; patent pending.
 \item \textbf{Ill-posed tasks as a new lens on vision-language models:} when no single cue determines the answer, counterfactuals reveal which evidence a model actually uses.
 \end{itemize}
 
@@ -65,10 +67,11 @@ I study when and why visual representations break: how object retrieval degrades
 \entry{2008--2013}{BSc, Aerospace Engineering}{Technion -- Israel Institute of Technology}{Dean's List}
 
 \section{Experience}
-\entry{2022--now}{Deep Learning Algorithm Researcher}{computer vision stealth startup}{\bul{Conceived and carried out the research, and built an MVP from scratch: retrieval of arbitrary objects across thousands of km\textsuperscript{2} of geospatial imagery per search, from as little as one example.}\bul{Combines self-supervised foundation models, active learning and gradient-boosted trees.}\bul{The MVP became a cornerstone product of the company.}\bul{Patent pending, first-named inventor.}}
+\entry{2022--now}{Deep Learning Algorithm Researcher}{computer vision stealth startup}{\bul{Conceived and carried out the research, and built a minimum viable product from scratch.}\bul{Retrieves arbitrary objects across thousands of km\textsuperscript{2} of geospatial imagery per search, from as little as one example.}\bul{Combines self-supervised foundation models, active learning and gradient-boosted trees.}\bul{Now a cornerstone product of the company.}\bul{Patent pending, first-named inventor.}}
 \entry{2020--2022}{Computer Vision Algorithm Developer}{aerospace industry}{Maintained and optimized a dim-target detection algorithm, wrote simulations in MATLAB, and ran operational analyses to improve its performance. Started and taught a 24-hour Python workshop for the engineering team.}
 \entry{2014--2020}{Dynamics and Loads Engineer}{aerospace industry}{Multi-body dynamics simulations, calibrated with genetic optimization algorithms.}
 
+\needspace{12\baselineskip}
 \section{Publications}
 {\small\color{ink3}* equal contribution}\par\vspace{4pt}
 {\sffamily\small\bfseries Computer vision and machine learning}\par\vspace{4pt}
@@ -105,14 +108,5 @@ I study when and why visual representations break: how object retrieval degrades
 {\me, Moti Karpel}
 {A flutter early-warning system built end to end with essentially no prior knowledge of the aircraft; thresholds set on a wind-tunnel wing carried over to a flight test, warning up to 6\,s before critical flutter onset.}
 {\href{https://doi.org/10.2514/1.J064327}{doi:10.2514/1.J064327} \textperiodcentered\ \href{https://github.com/bmeivar/flutter}{code}}
-
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}p{0.95in}X@{}}
-{\leavevmode\sffamily\small\color{ink3}Methods} & \small Self-supervised learning, few-shot retrieval, active learning, gradient-boosted trees, LoRA fine-tuning\\[2pt]
-{\leavevmode\sffamily\small\color{ink3}Models} & \small DINOv2, DINOv3, SigLIP2, SAM / SAM-2, OWLv2, open VLMs (Qwen-VL and InternVL families)\\[2pt]
-{\leavevmode\sffamily\small\color{ink3}Engineering} & \small Python, PyTorch, Hugging Face Transformers, FAISS; multi-GPU feature extraction and memory-mapped descriptor stores for 100M-image search\\[2pt]
-{\leavevmode\sffamily\small\color{ink3}Also} & \small Time-series analysis and anomaly detection, physics simulation and optimization; MATLAB\\[2pt]
-{\leavevmode\sffamily\small\color{ink3}Languages} & \small Hebrew, English
-\end{tabularx}
 
 \end{document}
